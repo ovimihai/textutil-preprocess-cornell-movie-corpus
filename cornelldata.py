@@ -122,7 +122,7 @@ def main():
                                       lines, MOVIE_CONVERSATIONS_FIELDS)
 
     with open(args.output, 'w', encoding='iso-8859-1') as outputfile:
-        writer = csv.writer(outputfile, delimiter=args.delimiter)
+        writer = csv.writer(outputfile, delimiter=args.delimiter, quoting=csv.QUOTE_ALL)
         
         for pair in extractSentencePairs(conversations):
             writer.writerow(pair)
